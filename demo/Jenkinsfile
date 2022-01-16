@@ -26,6 +26,7 @@ node{
   		}*/
 
       stage("build") {
+          sh "docker context use demo"
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
       }
       stage("run") {
