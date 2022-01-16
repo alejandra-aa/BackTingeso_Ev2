@@ -1,0 +1,77 @@
+SonarCloud plugins:
+  - IaC Code Quality and Security 1.4.0.1294 (iac)
+  - PL/SQL Code Quality and Security 3.7.0.4372 (plsql)
+  - Scala Code Quality and Security 1.9.0.3429 (sonarscala)
+  - C# Code Quality and Security 8.33.0.40503 (csharp)
+  - Vulnerability Analysis 9.3.0-M1.14685 (security)
+  - Java Code Quality and Security 7.6.0.28201 (java)
+  - HTML Code Quality and Security 3.5.0.3009 (web)
+  - Flex Code Quality and Security 2.7.0.2865 (flex)
+  - XML Code Quality and Security 2.5.0.3376 (xml)
+  - VB.NET Code Quality and Security 8.33.0.40503 (vbnet)
+  - Swift Code Quality and Security 4.4.0.5185 (swift)
+  - CFamily Code Quality and Security 6.29.0.41127 (cpp)
+  - Python Code Quality and Security 3.9.0.9230 (python)
+  - Go Code Quality and Security 1.9.0.3429 (go)
+  - JaCoCo 1.1.1.1157 (jacoco)
+  - Kotlin Code Quality and Security 2.8.0.1093 (kotlin)
+  - Mercurial 1.1.2 (scmmercurial)
+  - T-SQL Code Quality and Security 1.6.0.4844 (tsql)
+  - Apex Code Quality and Security 1.9.0.3429 (sonarapex)
+  - JavaScript/TypeScript Code Quality and Security 8.7.0.17093 (javascript)
+  - Ruby Code Quality and Security 1.9.0.3429 (ruby)
+  - Vulnerability Rules for C# 9.3.0-M1.14685 (securitycsharpfrontend)
+  - Vulnerability Rules for Java 9.3.0-M1.14685 (securityjavafrontend)
+  - License for SonarLint 8.0.0.26045 (license)
+  - Vulnerability Rules for JS 9.3.0-M1.14685 (securityjsfrontend)
+  - COBOL Code Quality 4.6.2.4876 (cobol)
+  - Vulnerability Rules for Python 9.3.0-M1.14685 (securitypythonfrontend)
+  - PHP Code Quality and Security 3.22.0.8482 (php)
+  - ABAP Code Quality and Security 3.10.0.3628 (abap)
+  - Configuration detection fot Code Quality and Security 1.1.0.185 (config)
+  - Vulnerability Rules for PHP 9.3.0-M1.14685 (securityphpfrontend)
+Global server settings:
+  - email.from=noreply@sonarcloud.io
+  - email.fromName=SonarCloud
+  - email.prefix=[SonarCloud]
+  - node_10_end_of_support_date=1620604800000
+  - node_10_grace_period_termination_date=1621814400000
+  - sonar.auth.bitbucket.enabled=true
+  - sonar.auth.microsoft.enabled=true
+  - sonar.core.id=1BD809FA-AWHW8ct9-T_TB3XqouNu
+  - sonar.core.serverBaseURL=https://sonarcloud.io
+  - sonar.core.startTime=2022-01-13T14:31:20+0100
+  - sonar.dbcleaner.weeksBeforeDeletingAllSnapshots=260
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByMonth=4
+  - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByWeek=1
+  - sonar.global.exclusions=**/build-wrapper-dump.json
+  - sonar.lf.enableGravatar=true
+  - sonar.lf.logoWidthPx=105
+  - sonar.maintenance_mode.link=https://sonarcloud.statuspage.io/incidents/4y1k6q1wsy4v
+  - sonar.organizations.anyoneCanCreate=true
+  - sonar.organizations.createPersonalOrg=true
+  - sonar.plsql.file.suffixes=sql,tab,pkb
+  - sonar.tsql.file.suffixes=.tsql
+Project server settings:
+Project scanner properties:
+  - sonar.binaries=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/build/classes/java/main
+  - sonar.host.url=https://sonarcloud.io
+  - sonar.java.binaries=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/build/classes/java/main
+  - sonar.java.jdkHome=/Users/aleazua/Library/Java/JavaVirtualMachines/azul-15.0.5/Contents/Home
+  - sonar.java.libraries=/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-rest/2.6.2/f96eb36347955e4e16d5265bc7bae1a85eeae3c4/spring-boot-starter-data-rest-2.6.2.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.6.2/685b236afc0144a52383cd2c52731dd016f9badd/spring-boot-starter-web-2.6.2.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.sql2o/sql2o/1.6.0/eada6f6c80c1f7fc61400cf338f48c8e77e830e3/sql2o-1.6.0.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.2.5/951b7eda125f3137538a94e2cbdcf744088ad4c2/postgresql-42.2.5.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.13/e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada/httpclient-4.5.13.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.s...
+  - sonar.java.source=11
+  - sonar.java.target=11
+  - sonar.java.test.binaries=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/build/classes/java/test
+  - sonar.java.test.libraries=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/build/classes/java/main,/Users/aleazua/Desktop/BackTingeso_Ev2/demo/build/resources/main,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-rest/2.6.2/f96eb36347955e4e16d5265bc7bae1a85eeae3c4/spring-boot-starter-data-rest-2.6.2.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.6.2/685b236afc0144a52383cd2c52731dd016f9badd/spring-boot-starter-web-2.6.2.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.sql2o/sql2o/1.6.0/eada6f6c80c1f7fc61400cf338f48c8e77e830e3/sql2o-1.6.0.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.2.5/951b7eda125f3137538a94e2cbdcf744088ad4c2/postgresql-42.2.5.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/io.rest-assured/rest-assured/...
+  - sonar.libraries=/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-rest/2.6.2/f96eb36347955e4e16d5265bc7bae1a85eeae3c4/spring-boot-starter-data-rest-2.6.2.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.6.2/685b236afc0144a52383cd2c52731dd016f9badd/spring-boot-starter-web-2.6.2.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.sql2o/sql2o/1.6.0/eada6f6c80c1f7fc61400cf338f48c8e77e830e3/sql2o-1.6.0.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.2.5/951b7eda125f3137538a94e2cbdcf744088ad4c2/postgresql-42.2.5.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.13/e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada/httpclient-4.5.13.jar,/Users/aleazua/.gradle/caches/modules-2/files-2.1/org.s...
+  - sonar.organization=franciscavera
+  - sonar.projectBaseDir=/Users/aleazua/Desktop/BackTingeso_Ev2/demo
+  - sonar.projectKey=franciscavera
+  - sonar.projectName=demo
+  - sonar.projectVersion=0.0.1-SNAPSHOT
+  - sonar.scanner.app=ScannerGradle
+  - sonar.scanner.appVersion=3.2-SNAPSHOT/7.3.2
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/src/main/java
+  - sonar.tests=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/src/test/java
+  - sonar.working.directory=/Users/aleazua/Desktop/BackTingeso_Ev2/demo/build/sonar
