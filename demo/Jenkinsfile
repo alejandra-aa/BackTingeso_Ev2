@@ -24,13 +24,9 @@ node{
   		}
 
       stage("build") {
-          sh 'echo "ayudaaaa2"'
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
-          sh 'echo "ayudaaaa3"' 
       }
-
       stage("run") {
         sh 'docker run -it -p 8081:8081 demo'
-        sh 'echo "ayudaaaa4"'
       }
 }

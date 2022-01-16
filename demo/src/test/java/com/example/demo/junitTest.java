@@ -42,6 +42,7 @@ public class junitTest {
         //System.out.println(request);
         HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
         HttpEntity httpEntity = httpResponse.getEntity();
+        System.out.println("pasa por el test crearproducto");
         System.out.println(EntityUtils.toString(httpEntity));
         }catch (IOException e) {
             e.printStackTrace();
@@ -56,6 +57,7 @@ public class junitTest {
     public void getProductoApi() throws ClientProtocolException, IOException {
         HttpUriRequest request = new HttpGet( "http://localhost:8081/productos/" + 999 );
         HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
+        System.out.println("pasa por el test getproducto");
         assertThat(httpResponse.getStatusLine().getStatusCode(),equalTo(HttpStatus.SC_NOT_FOUND));
     }
     
@@ -67,6 +69,7 @@ public class junitTest {
         HttpUriRequest request = new HttpDelete( "http://localhost:8081/productos/" + 5 );
         HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
         HttpEntity httpEntity = httpResponse.getEntity();
+        System.out.println("pasa por el test eliminarproducto");
         System.out.println(EntityUtils.toString(httpEntity));
         }catch (IOException e) {
             e.printStackTrace();
