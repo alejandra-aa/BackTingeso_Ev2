@@ -1,1 +1,1 @@
-exec java -jar -server.port=8081 /build/libs/demo-0.0.1-SNAPSHOT.jar
+exec java -jar -server.port=8081 /demo-0.0.1-SNAPSHOT.jar
