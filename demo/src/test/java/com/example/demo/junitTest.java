@@ -52,14 +52,14 @@ public class junitTest {
    
 	}
 
-   @Test
+   /*@Test
     //Revisa que el producto 999 no se encuentra en la api
     public void getProductoApi() throws ClientProtocolException, IOException {
         HttpUriRequest request = new HttpGet( "http://localhost:8081/productos/" + 999 );
         HttpResponse httpResponse = HttpClientBuilder.create().build().execute(request);
         System.out.println("pasa por el test getproducto");
         assertThat(httpResponse.getStatusLine().getStatusCode(),equalTo(HttpStatus.SC_NOT_FOUND));
-    }
+    }*/
     
 
 	@Test
