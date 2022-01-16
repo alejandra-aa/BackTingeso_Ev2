@@ -1,1 +1,1 @@
-exec java -jar /build/libs/backend-0.0.1-SNAPSHOT.jar
+exec java -jar -Dserver.port=8081 /build/libs/backend-0.0.1-SNAPSHOT.jar
