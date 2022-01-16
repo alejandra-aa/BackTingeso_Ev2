@@ -14,7 +14,7 @@ node{
           }
   		}
 
-     stage('SonarQube analysis') {
+     /*stage('SonarQube analysis') {
     			
 				dir("/var/lib/jenkins/workspace/Tingeso/demo") {
 					withSonarQubeEnv() { // Will pick the global server connection you have configured
@@ -23,7 +23,7 @@ node{
     					}
 				
 			  }
-  		}
+  		}*/
 
       stage("build") {
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
