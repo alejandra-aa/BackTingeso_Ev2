@@ -1,0 +1,36 @@
+node{
+
+      stage("Repo"){
+        checkout scm
+        sh 'echo "ayudaaaa"'
+      }
+
+      stage('JunitTest') {
+    			dir("/var/lib/jenkins/workspace/Tingeso/demo") {
+						sh 'chmod +x ./gradlew'
+            sh './gradlew test'
+					}
+  		}
+
+      stage('SonarQube analysis') {
+    			
+				dir("/var/lib/jenkins/workspace/Tingeso/demo") {
+					withSonarQubeEnv() { // Will pick the global server connection you have configured
+                        sh 'chmod 777 ./gradlew'
+                        sh './gradlew sonarqube'
+    					}
+				
+			  }
+  		}
+
+      stage("build") {
+          sh 'echo "ayudaaaa2"'
+          sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
+          sh 'echo "ayudaaaa3"' 
+      }
+
+      stage("run") {
+        sh 'docker run -it -p 8081:8081 demo'
+        sh 'echo "ayudaaaa4"'
+      }
+}
