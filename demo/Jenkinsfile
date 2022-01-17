@@ -47,7 +47,7 @@ node{
       }
 
       stage('Push'){
-          sh 'docker push franciscavera/backend-ev2:latest'
+          sh 'docker push demo'
       }
 
       /*stage("Run") {
