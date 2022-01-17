@@ -1,7 +1,5 @@
 node{
-     
-
-      stage("Cloning Repo"){
+      stage("Cloning Repository"){
         checkout scm
         sh 'echo "ayudaaaa"'
       }
@@ -29,15 +27,7 @@ node{
       stage("Build Docker") {
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
       }
-/*
-      stage("Try"){
-        script { 
-                    docker.withRegistry( '', registryCredential ) { 
-                        sh 'docker push demo'
-                    }
-                } 
-      }
-*/
+
       stage('Login DockerHub'){
         withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'HUB_USER', passwordVariable: 'HUB_TOKEN')]) {                      
                     sh '''
@@ -56,6 +46,7 @@ node{
       stage('Logout DockerHub'){
         sh 'docker logout'
       }
+      
       /*stage("Run") {
         timeout(time: 80, unit: 'SECONDS') {
            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
