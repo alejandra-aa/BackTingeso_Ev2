@@ -1,6 +1,7 @@
 node{
       environment{
-        DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+        USERNAME = credentials('DOCKER_USERNAME')
+        PASSWORD = credentials('DOCKER_PASSWORD')
         registryCredential = 'dockerHub'
       }
 
@@ -42,7 +43,7 @@ node{
       }
 */
       stage('Login DockerHub'){
-          sh  'echo $DOCKERHUB_CREDENTIALS_PSW | winpty docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
       }
 
       stage('Push'){
