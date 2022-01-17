@@ -1,9 +1,5 @@
 node{
-      environment{
-        USERNAME = credentials('DOCKER_USERNAME')
-        PASSWORD = credentials('DOCKER_PASSWORD')
-        registryCredential = 'dockerHub'
-      }
+     
 
       stage("Repo"){
         checkout scm
@@ -43,7 +39,13 @@ node{
       }
 */
       stage('Login DockerHub'){
-          sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
+          steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'HUB_USER', passwordVariable: 'HUB_TOKEN')]) {                      
+                    sh '''
+                        docker login -u $HUB_USER -p $HUB_TOKEN 
+                    '''
+                }
+            }
       }
 
       stage('Push'){
