@@ -1,6 +1,6 @@
 node{
       environment{
-        DOCKERHUB_CREDENTIALS = credentials('franciscavera')
+        DOCKERHUB_CREDENTIALS = credentials('dockerHub')
       }
 
       stage("Repo"){
@@ -32,15 +32,15 @@ node{
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
       }
 
-      /*stage('Login DockerHub'){
+      stage('Login DockerHub'){
           sh  'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-      }*/
+      }
 
-      /*stage('Push'){
+      stage('Push'){
         dir("/var/lib/jenkins/workspace/Tingeso/demo"){
           sh 'docker push demo'
         }
-      }*/
+      }
 
       stage("Run") {
         timeout(time: 80, unit: 'SECONDS') {
