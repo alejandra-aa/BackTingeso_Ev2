@@ -1,6 +1,7 @@
 node{
       environment{
         DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+        registryCredential = 'dockerHub'
       }
 
       stage("Repo"){
@@ -32,21 +33,30 @@ node{
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
       }
 
-      stage('Login DockerHub'){
-          sh  'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      stage("Try"){
+        script { 
+                    docker.withRegistry( '', registryCredential ) { 
+                        sh 'docker push demo'
+                    }
+                } 
       }
 
-      /*stage('Push'){
+      stage('Login DockerHub'){
+          sh  'echo $DOCKERHUB_CREDENTIALS_PSW | winpty docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+
+      stage('Push'){
         dir("/var/lib/jenkins/workspace/Tingeso/demo"){
           sh 'docker push demo'
         }
       }
 
-      stage("Run") {
+      /*stage("Run") {
         timeout(time: 80, unit: 'SECONDS') {
            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               sh 'docker run -i -p 8081:8081 demo'
            }
         }
       }
+      */
 }
