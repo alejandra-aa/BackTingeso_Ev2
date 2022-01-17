@@ -1,7 +1,7 @@
 node{
      
 
-      stage("Repo"){
+      stage("Cloning Repo"){
         checkout scm
         sh 'echo "ayudaaaa"'
       }
@@ -26,7 +26,7 @@ node{
 			  }
   		}*/
 
-      stage("Build") {
+      stage("Build Docker") {
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
       }
 /*
@@ -46,16 +46,16 @@ node{
         }
       }
 
-      stage('Push'){
+      stage('Push Docker'){
         dir("/var/lib/jenkins/workspace/Tingeso/demo"){
-          sh 'docker tag demo franciscavera/demo:latest' 
-          sh 'docker push franciscavera/demo:latest'
+          sh 'docker tag demo franciscavera/backend-ev2:latest' 
+          sh 'docker push franciscavera/backend-ev2:latest'
         }
-          
-          
-
       }
 
+      stage('Logout DockerHub'){
+        sh 'docker logout'
+      }
       /*stage("Run") {
         timeout(time: 80, unit: 'SECONDS') {
            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
