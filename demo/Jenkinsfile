@@ -13,16 +13,15 @@ node{
           }
   		}
 
-     /*stage('SonarQube analysis') {
+     stage('SonarQube analysis') {
     			
 				dir("/var/lib/jenkins/workspace/TingesoBackend/demo") {
 					withSonarQubeEnv('sonarqube') { // Will pick the global server connection you have configured
-                        sh 'chmod 777 ./gradlew'
                         sh './gradlew sonarqube'
     					}
 				
 			  }
-  		}*/
+  		}
 
       stage("Build Docker") {
           sh """ docker build --build-arg JAR_FILE=build/libs/\\*.jar -t demo ."""
