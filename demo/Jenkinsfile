@@ -1,6 +1,7 @@
 node{
       environment{
-        DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+        DOCKERHUB_USER = "franciscavera"
+        DOCKERHUB_PASS = "Fran.Docker"
       }
 
       stage("Repo"){
@@ -33,7 +34,7 @@ node{
       }
 
       stage('Login DockerHub'){
-          sh  'docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
+          sh  'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS'
       }
 
       stage('Push'){
