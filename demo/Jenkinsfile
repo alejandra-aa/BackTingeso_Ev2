@@ -6,7 +6,7 @@ node{
 
       stage('JunitTest') {
           catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    dir("/var/lib/jenkins/workspace/Tingeso/demo") {
+                    dir("/var/lib/jenkins/workspace/TingesoBackend/demo") {
                         sh 'chmod +x ./gradlew'
                         sh './gradlew test'
                     }
@@ -15,7 +15,7 @@ node{
 
      /*stage('SonarQube analysis') {
     			
-				dir("/var/lib/jenkins/workspace/Tingeso/demo") {
+				dir("/var/lib/jenkins/workspace/TingesoBackend/demo") {
 					withSonarQubeEnv('sonarqube') { // Will pick the global server connection you have configured
                         sh 'chmod 777 ./gradlew'
                         sh './gradlew sonarqube'
@@ -37,7 +37,7 @@ node{
       }
 
       stage('Push Docker'){
-        dir("/var/lib/jenkins/workspace/Tingeso/demo"){
+        dir("/var/lib/jenkins/workspace/TingesoBackend/demo"){
           sh 'docker tag demo franciscavera/backend-ev2:latest' 
           sh 'docker push franciscavera/backend-ev2:latest'
         }
