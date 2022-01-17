@@ -47,7 +47,13 @@ node{
       }
 
       stage('Push'){
-          sh 'docker push demo'
+        dir("/var/lib/jenkins/workspace/Tingeso/demo"){
+          sh 'docker tag demo franciscavera/demo:latest' 
+          sh 'docker push franciscavera/demo:latest'
+        }
+          
+          
+
       }
 
       /*stage("Run") {
