@@ -4,16 +4,7 @@ node{
         sh 'echo "ayudaaaa"'
       }
 
-      stage('JunitTest') {
-          catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    dir("/var/lib/jenkins/workspace/TingesoBackend/demo") {
-                        sh 'chmod +x ./gradlew'
-                        sh './gradlew test'
-                    }
-          }
-  		}
-
-     stage('SonarQube analysis') {
+      stage('SonarQube analysis') {
     			
 				dir("/var/lib/jenkins/workspace/TingesoBackend/demo") {
 					withSonarQubeEnv('sonarqube') {
@@ -21,6 +12,15 @@ node{
     					}
 				
 			  }
+  		}
+
+      stage('JunitTest') {
+          catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    dir("/var/lib/jenkins/workspace/TingesoBackend/demo") {
+                        sh 'chmod +x ./gradlew'
+                        sh './gradlew test'
+                    }
+          }
   		}
 
       stage("Build Docker") {
