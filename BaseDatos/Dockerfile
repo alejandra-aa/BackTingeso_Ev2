@@ -1,5 +1,5 @@
 FROM postgres
-ENV POSTGRES_USUARIO postgres
-ENV POSTGRES_PASSWORD postgres
-ENV POSTGRES_DB db_tingeso
+ENV POSTGRES_USUARIO tingeso
+ENV POSTGRES_PASSWORD 1234
+ENV POSTGRES_DB tingeso
 COPY createDB.sql /docker-entrypoint-initdb.d/

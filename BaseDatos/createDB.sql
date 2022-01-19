@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS Producto CASCADE;
 
-CREATE TABLE Producto(
+CREATE TABLE IF NOT EXISTS Producto(
 
     id serial,
     codigo varchar(10),

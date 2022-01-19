@@ -1,18 +1,48 @@
-version: '3.7'
+version: '2'
+
 services:
-    postgres:
-        image: postgres:10.5
-        restart: always
-        environment:
-          - POSTGRES_USER=tingeso
-          - POSTGRES_PASSWORD=1234
-        logging:
-          options:
-            max-size: 10m
-            max-file: "3"
-        ports:
-          - '5438:5432'
-        volumes: 
-          - ./postgres-data:/var/lib/postgresql/data
-          # copy the sql script to create tables
-          - ./sql/createDB.sql:/docker-entrypoint-initdb.d/createDB.sql
+  app:
+    image: 'backend'
+    build: .
+    ports:
+      - 8081:8081
+    container_name: backendprueba
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/tingeso
+      - SPRING_DATASOURCE_USERNAME=tingeso
+      - SPRING_DATASOURCE_PASSWORD=1234   
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - franciscavera/frontend-ev2:latest
+  app-client:
+    image: franciscavera/frontend-ev2:latest
+    container_name: frontend
+ # Map the exposed port 80 on the container to port 9090 on the host machine
+    restart: always
+    depends_on:
+      - db
+      - backend
+    networks:
+      - franciscavera/frontend-ev2:latest
+      - backend
+  db:
+    image: postgres:14.1
+    container_name: pruebaDB
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=tingeso
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=tingeso
+    volumes:
+      - ./BaseDatos/createDB.sql:/docker-entrypoint-initdb.d/createDB.sql
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+      - franciscavera/frontend-ev2:latest
+
+volumes:
+    createDB.sql:
+networks:
+  backend:
+  franciscavera/frontend-ev2:latest: 
