@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
+//Miercoles enero 2022.
 @CrossOrigin(origins = "*")
 @RestController
 public class ProductoService {
