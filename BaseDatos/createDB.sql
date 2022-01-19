@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS Producto CASCADE;
 
+
 CREATE TABLE IF NOT EXISTS Producto(
 
     id serial,
